@@ -3,7 +3,7 @@
     Plugin Name: WFC Plugin
     Description: WFC Development Helper Plugin
     Author: Steve Fischer
-    Version: 0.1
+    Version: 1.1
     */
 
     // plugin namespace = WFCDP (Web Full Circle Developer Plugin)
@@ -35,6 +35,11 @@
         //Framework Styles includes jqueryui and bootstrap
         wp_register_style( 'wfcdp-style', plugins_url( 'css/styles.css', __FILE__ ) );
         wp_enqueue_style( 'wfcdp-style' );
+    }
+
+    require_once('classes/wfc.update.php');
+    if( is_admin() ){
+        new BFIGitHubPluginUpdater( __FILE__, 'stevecfischer@gmail.com', "wfc_checker" );
     }
 
     require_once('web-widget.php');
