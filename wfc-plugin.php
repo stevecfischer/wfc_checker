@@ -3,7 +3,7 @@
     Plugin Name: WFC Plugin
     Description: WFC Development Helper Plugin
     Author: Steve Fischer
-    Version: 1.1
+    Version: 1.2
     */
 
     // plugin namespace = WFCDP (Web Full Circle Developer Plugin)
