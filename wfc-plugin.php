@@ -39,7 +39,7 @@
 
     require_once('classes/wfc.update.php');
     if( is_admin() ){
-        new BFIGitHubPluginUpdater( __FILE__, 'stevecfischer@gmail.com', "wfc_checker" );
+        new BFIGitHubPluginUpdater( __FILE__, 'stevecfischer', "wfc_checker" );
     }
 
     require_once('web-widget.php');
