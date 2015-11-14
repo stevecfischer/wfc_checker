@@ -3,27 +3,15 @@
     Plugin Name: WFC Plugin
     Description: WFC Development Helper Plugin
     Author: Steve Fischer
-    Version: 1.2
+    Plugin URI: https://github.com/stevecfischer/wfc_checker/
+    Version: 1.3
     */
 
     // plugin namespace = WFCDP (Web Full Circle Developer Plugin)
-
+    set_site_transient( 'update_plugins', NULL );
     define( 'WFCDP_SITE_URL', get_bloginfo( 'url' ).'/' );
     define( 'WFCDP_ADMIN_URL', admin_url() );
-    define( 'WFCDP_PT', dirname( __DIR__ ).'/' );
-    define( 'WFCDP_THEME_ROOT', realpath( __DIR__.'/../../' ) );
-    define( 'WFCDP_CONFIG', WFCDP_PT.'/wfc_config' );
-    define( 'WFCDP_THEME_FUNCTIONS', WFCDP_PT.'/theme_functions' );
-    define( 'WFCDP_BUILD_THEME', WFCDP_THEME_FUNCTIONS.'/build-theme' );
-    define( 'WFCDP_FUNCTIONS', WFCDP_PT.'/functions' );
-    define( 'WFCDP_WIDGETS', WFCDP_PT.'/widgets' );
-    define( 'WFCDP_SHORTCODE', WFCDP_PT.'/admin/shortcode' );
-    define( 'WFCDP_URI', get_template_directory_uri() );
-    define( 'WFCDP_ADM', WFCDP_PT.'/admin' );
-    define( 'WFCDP_PLUGINS', WFCDP_PT.'/admin/plugins' );
-    define( 'WFCDP_CSS_URI', WFCDP_URI.'/css' );
-    define( 'WFCDP_JS_URI', WFCDP_URI.'/js' );
-    define( 'WFCDP_IMG_URI', WFCDP_URI.'/images' );
+    define( 'WFCDP_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 
     /**
      * Includes CSS into WP head

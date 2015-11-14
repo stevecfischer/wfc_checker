@@ -97,7 +97,7 @@
             if( empty($response->slug) || $response->slug != $this->slug ){
                 return false;
             }
-
+            //print_r($this->pluginData);
             // Add our plugin information
             $response->last_updated = $this->githubAPIResult->published_at;
             $response->slug         = $this->slug;
@@ -105,7 +105,7 @@
             $response->version      = $this->githubAPIResult->tag_name;
             $response->author       = $this->pluginData["AuthorName"];
             $response->homepage     = $this->pluginData["PluginURI"];
-
+            //print_r($this->githubAPIResult);
             // This is our release download zip file
             $downloadLink = $this->githubAPIResult->zipball_url;
 
@@ -119,7 +119,7 @@
             $response->download_link = $downloadLink;
 
             // We're going to parse the GitHub markdown release notes, include the parser
-            require_once(plugin_dir_path( __FILE__ )."vendor/Parsedown.php");
+            require_once(WFCDP_PLUGIN_PATH."vendor/Parsedown.php");
 
             // Create tabs in the lightbox
             $response->sections = array(
